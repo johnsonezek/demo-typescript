@@ -8,7 +8,14 @@ import {
   STUDENT_PLACE,
 } from "./utils/Helper";
 
-const DropDown = () => {
+type DropdownProps = {
+  // name: string
+  term: string
+  term2: string
+
+}
+
+const DropDown = ({term, term2}:DropdownProps) => {
   return (
     <div className="list">
       <div>
@@ -36,7 +43,7 @@ const DropDown = () => {
         <br />
         <select name="selectList" id="selectList">
           {STUDENT_COLLEGE.map((item, index) => {
-            return <option key={index}>{item.label}</option>;
+            return <option key={index} value={term}>{item.label}</option>;
           })}
         </select>
       </div>
@@ -46,7 +53,7 @@ const DropDown = () => {
         <br />
         <select name="selectList" id="selectList">
           {STUDENT_PLACE.map((item, index) => {
-            return <option key={index}>{item.label}</option>;
+            return <option key={index} value={term2} >{item.label}</option>;
           })}
         </select>
       </div>
